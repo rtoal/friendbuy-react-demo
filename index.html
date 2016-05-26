@@ -4,21 +4,28 @@
   <head>
     <meta charset="utf-8">
     <title>React and Friendbuy</title>
+    <script src="https://cdn.jsdelivr.net/react/15.1.0/react.js"></script>
+    <script src="https://cdn.jsdelivr.net/react/15.1.0/react-dom.js"></script>
+    <script src="smart-pixel.js"></script>
   </head>
 
   <body>
     <h1>Friendbuy React Demo</h1>
 
+    <div id="nav"></div>
+    <script src="nav.js"></script>
+
     <p>Hello, here is a React component:</p>
 
     <div style="border:1px solid black;padding:1em" id="contact-list"></div>
 
-    <script src="https://cdn.jsdelivr.net/react/15.1.0/react.js"></script>
-    <script src="https://cdn.jsdelivr.net/react/15.1.0/react-dom.js"></script>
+    <p>And here is a button to trigger an overlay Friendbuy Widget</p>
 
-    <p>And here is an overlay Friendbuy Widget</p>
-
-    <p>Button Coming soon<p>
+    <script>
+      window['friendbuy'] = window['friendbuy'] || [];
+      window['friendbuy'].push(['widget', "cy8-hiE"]);
+    </script>
+    <div class="friendbuy-cy8-hiE"></div>
   </body>
 
   <script>
