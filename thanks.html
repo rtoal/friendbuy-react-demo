@@ -20,8 +20,26 @@
 
     <p>See the embedded thanks widget</p>
     <script>
-        window['friendbuy'] = window['friendbuy'] || [];
-        window['friendbuy'].push(['widget', "cy8-hiF"]);
+      window['friendbuy'] = window['friendbuy'] || [];
+      window['friendbuy'].push(['widget', "cy8-hiF"]);
+      window['friendbuy'].push(['track', 'order', {
+        id: "0382138317",
+        amount: "325.94",
+        email: "email@example.org",
+        new_customer: false
+      }]);
+      window['friendbuy'].push(['track', 'products', [
+        {
+          sku: "2579",
+          price: "22.00",
+          quantity: "1"
+        },
+        {
+          sku: "4063",
+          price: "76.00",
+          quantity: "2"
+        }
+      ]]);
     </script>
     <div class="friendbuy-cy8-hiF"></div>
   </body>
