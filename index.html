@@ -17,7 +17,7 @@
 
     <p>Hello, here is a React component:</p>
 
-    <div style="border:1px solid black;padding:1em" id="contact-list"></div>
+    <div style="border:1px solid black" id="product-list"></div>
 
     <p>And here is a button to trigger an overlay Friendbuy Widget</p>
 
@@ -26,24 +26,37 @@
       window['friendbuy'].push(['widget', "cy8-hiE"]);
     </script>
     <div class="friendbuy-cy8-hiE"></div>
-  </body>
 
-  <script>
-    var rootElement =
-      React.createElement('div', {},
-        React.createElement('h2', {}, "Contacts"),
-        React.createElement('ul', {},
-          React.createElement('li', {},
-            React.createElement('span', {}, "Alice"),
-            React.createElement('a', {href: 'mailto:alice@jexample.com'}, ' Email')
-          ),
-          React.createElement('li', {},
-            React.createElement('span', {}, "Bob"),
-            React.createElement('a', {href: 'mailto:bob@example.com'}, ' Email')
+    <script>
+      var ProductInfo = React.createClass({
+        propTypes: {
+          name: React.PropTypes.string.isRequired,
+          description: React.PropTypes.string,
+        },
+
+        render: function() {
+          return (
+            React.createElement('li', {className: 'Product'},
+              React.createElement('div', {className: 'Product-name'},
+                this.props.name + ' ',
+                React.createElement('em', {}, this.props.description))
+            )
+          )
+        },
+      });
+
+      var catalogElement =
+        React.createElement('div', {style: {'background-color': 'linen', padding: '0.5em'}},
+          React.createElement('h2', {}, "Products"),
+          React.createElement('ul', {},
+            React.createElement('li', {},
+              React.createElement(ProductInfo, {name: 'Sai', description: 'Nice'}),
+              React.createElement(ProductInfo, {name: 'Kama', description: 'Also nice'})
+            )
           )
         )
-      )
-    ReactDOM.render(rootElement, document.getElementById('contact-list'))
-  </script>
+      ReactDOM.render(catalogElement, document.getElementById('product-list'))
+    </script>
 
+  </body>
 </html>
