@@ -46,13 +46,11 @@
       });
 
       var catalogElement =
-        React.createElement('div', {style: {'background-color': 'linen', padding: '0.5em'}},
+        React.createElement('div', {style: {backgroundColor: 'linen', padding: '0.5em'}},
           React.createElement('h2', {}, "Products"),
           React.createElement('ul', {},
-            React.createElement('li', {},
-              React.createElement(ProductInfo, {name: 'Sai', description: 'Nice'}),
-              React.createElement(ProductInfo, {name: 'Kama', description: 'Also nice'})
-            )
+            React.createElement(ProductInfo, {name: 'Sai', description: 'Nice'}),
+            React.createElement(ProductInfo, {name: 'Kama', description: 'Also nice'})
           )
         )
       ReactDOM.render(catalogElement, document.getElementById('product-list'))
